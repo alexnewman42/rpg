@@ -93,7 +93,6 @@ function buyHealth() {
     } else {
         text.innerText = "You don't have enough gold to buy health.";
     }
-  
 }
 
 function buyWeapon() {
@@ -128,9 +127,6 @@ function sellWeapon() {
     }
 }
 
-function fightDragon() {
-    console.log("Fighting dragon");
-}
 
 function fightSlime() {
     fighting = 0;
@@ -142,9 +138,17 @@ function fightBeast() {
     goFight();
 }
 
-function goFight() {
+function fightDragon() {
     fighting = 2;
     goFight();
+}
+
+function goFight() {
+    update(locations[3]);
+    monsterHealth = monsters[fighting].health;
+    monsterStats.computedStyleMap.display = 'block';
+    monsterName.innerText = monsters[fighting].name;
+    monsterHealthText.innerText = monsterHealth;
 }
 
 function attack() {
