@@ -68,6 +68,7 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 function update(location) {
+    monsterStats.computedStyleMap.display = "none";
     button1.innerText = location["button text"][0];
     button2.innerText = location["button text"][1];
     button3.innerText = location["button text"][2];
@@ -180,4 +181,8 @@ function defeatMonster() {
     goldText.innerText = gold;
     xpText.innerText = xp;
     update(locations[4]);
+}
+
+function lose() {
+    update(locations[5]);
 }
