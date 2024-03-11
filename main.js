@@ -80,7 +80,7 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 function update(location) {
-    monsterStats.computedStyleMap.display = "none";
+    monsterStats.style.display = "none";
     button1.innerText = location["button text"][0];
     button2.innerText = location["button text"][1];
     button3.innerText = location["button text"][2];
@@ -164,16 +164,16 @@ function fightDragon() {
 function goFight() {
     update(locations[3]);
     monsterHealth = monsters[fighting].health;
-    monsterStats.computedStyleMap.display = 'block';
+    monsterStats.style.display = 'block';
     monsterName.innerText = monsters[fighting].name;
     monsterHealthText.innerText = monsterHealth; 
 }
 
 function attack() {
-    text.innerText = "The " +monsters[fighting].name + " attacks!";
+    text.innerText = "The " + monsters[fighting].name + " attacks!";
     text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
     health -= monsters[fighting].level;
-    monsterHealth == weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
     healthText.innerText = health;
     monsterHealthText.innerText = monsterHealth;
     if (health <= 0) {
